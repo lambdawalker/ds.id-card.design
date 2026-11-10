@@ -9,11 +9,29 @@
 
 ## Human-readable fields
 
-Check name, portrait, date of birth, license or permit number, category, issuing authority, issue and expiry dates, signature and restrictions. Check CURP, address and optional medical or emergency fields per state and edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Driver license or permit number | Issuer assigned | — | — | Assignment policy varies by issuer. Randomness is unverified. |
+| License class or category | Issuer determined | — | — | — |
+| Issuing authority | Document metadata | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Holder signature | Captured | — | — | — |
+| Restrictions | Issuer determined | — | — | Verify presence by issuer or edition. |
+| CURP | Computed + issuer assigned | [RENAPO CURP composition](https://www.gob.mx/segob/renapo/es/articulos/sabes-como-se-conforma-tu-curp?idiom=es) | Derived from names, date of birth, sex and birthplace, with an issuer-assigned disambiguator and a check digit. The biographic inputs alone do not establish the official key. | Verify presence by issuer or edition. |
+| Address | Recorded | — | — | Verify presence by issuer or edition. |
+| Medical information | Recorded | — | — | Verify presence by issuer or edition. |
+| Emergency contact | Recorded | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-No shared state payload established. Chihuahua's digital license has a QR that opens the state's verification page with driver data. The cited source describes the lookup result, with embedded fields unverified. Check printed cards separately.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Verification code | Computed | QR · Chihuahua digital driver license example | Link to a state verification page that displays driver data. Embedded field list unverified. | The example establishes QR use for the digital license. Check permits, physical cards and other jurisdictions separately. |
 
 ## Sources
 

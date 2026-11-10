@@ -8,11 +8,21 @@
 
 ## Human-readable fields
 
-Check registered name, portrait, registration number, date of birth, expiry and signature. Verify the placement and edition of each element.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Registration or enrollment number | Issuer assigned | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Holder signature | Captured | — | — | — |
 
 ## Machine-readable data
 
-ISC confirms an MRZ on secure status cards newly issued or renewed from February 1, 2019. Payload fields unverified here. Do not infer passport fields from the presence of an MRZ.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Printed MRZ | Computed | MRZ · ISC | Field list unverified. | ISC confirms an MRZ on secure status cards newly issued or renewed from February 1, 2019. Payload fields unverified here. Do not infer passport fields from the presence of an MRZ. |
 
 ## Sources
 

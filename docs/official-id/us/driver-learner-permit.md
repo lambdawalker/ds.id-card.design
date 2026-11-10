@@ -9,11 +9,28 @@
 
 ## Human-readable fields
 
-Check name, portrait, date of birth, address, credential number, issue date, expiry, sex marker and signature. Driver credentials may also show class, endorsements and restrictions. Other physical descriptors vary by jurisdiction.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Address | Recorded | — | — | — |
+| Driver license or permit number | Issuer assigned | — | — | Assignment policy varies by issuer. Randomness is unverified. |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Holder signature | Captured | — | — | — |
+| License class or category | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Endorsements | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Restrictions | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Physical descriptors | Recorded | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Confirm permit medium and code presence first. For REAL ID editions, the PDF417 barcode carries expiration date, name, issue date, date of birth, sex marker, address, unique card number, card design revision date, inventory control number and issuing jurisdiction. AAMVA editions can carry additional fields, including driving privileges and descriptors, subject to issuer adoption. Confirm actual fields for standard, limited-term, and temporary editions separately.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Barcode | Computed | PDF417 · 6 CFR §37.19 / AAMVA | Name, date of birth, sex marker, address, card number, issue and expiration dates, issuing jurisdiction, card design revision date and inventory control number. | REAL ID baseline where applicable. Optional driving privileges or descriptors depend on AAMVA edition and issuer adoption. Verify standard and temporary editions separately. |
 
 ## Sources
 

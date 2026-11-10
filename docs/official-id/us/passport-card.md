@@ -8,11 +8,25 @@
 
 ## Human-readable fields
 
-Check surname and given names, card number, nationality, date of birth, sex marker, portrait, issue and expiration dates, and authority.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Card number | Issuer assigned | — | — | — |
+| Nationality | Issuer determined | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Portrait | Captured | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Issuing authority | Document metadata | — | — | — |
 
 ## Machine-readable data
 
-Verify the printed machine-readable zone against the card edition. For supported RFID editions, the tag is a reference identifier used to retrieve the agency record. The retrieved biographic data is a separate channel. Verify the specific card generation and any printed machine-readable fields independently.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Printed MRZ | Computed | Machine-readable zone | Edition-specific field list unverified. | Check the card edition. |
+| RFID tag | Issuer assigned + encoded | RFID · CBP lookup | Reference identifier. Agency records can return biographic data separately. | Verify supported card generation. |
 
 ## Sources
 

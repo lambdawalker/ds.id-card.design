@@ -8,11 +8,25 @@
 
 ## Human-readable fields
 
-Check name, portrait, date of birth, tribe, enrollment or credential number, expiration and signature. Confirm any citizenship or enhanced-travel legend with the tribal issuer.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Tribe or First Nation | Document metadata | — | — | — |
+| Registration or enrollment number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Document number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Expiration date | Issuer determined | — | — | — |
+| Holder signature | Captured | — | — | — |
+| Citizenship indicator | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Border-travel legend | Document metadata | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Verify individual tribal card barcodes and MRZ. Enhanced border-enabled editions may use a lookup identifier; the CBP architecture alone does not establish technology or fields for a specific nation.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | barcode, MRZ | Unverified. | Verify individual tribal card barcodes and MRZ. Enhanced border-enabled editions may use a lookup identifier; the CBP architecture alone does not establish technology or fields for a specific nation. |
 
 ## Sources
 

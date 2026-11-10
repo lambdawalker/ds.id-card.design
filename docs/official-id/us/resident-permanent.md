@@ -9,11 +9,25 @@
 
 ## Human-readable fields
 
-Name, portrait, USCIS number, immigration category, country of birth, date of birth, sex marker, resident-since date and card expiry are visible on modern samples. Check reverse card identifiers separately.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| USCIS number | Issuer assigned | — | — | — |
+| Status or eligibility category | Issuer determined | — | — | — |
+| Country of birth | Recorded | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Resident-since date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Card number | Issuer assigned | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Modern specimens show a machine-readable text zone. Verify the payload field set by edition, including which person and card identifiers are carried.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Printed machine-readable zone | Computed | Machine-readable text | Unverified. | Modern specimens show a machine-readable text zone. Verify the payload field set by edition, including which person and card identifiers are carried. |
 
 ## Sources
 

@@ -8,11 +8,24 @@
 
 ## Human-readable fields
 
-Check printed name, portrait, membership or card number, program name, expiry, and any date of birth, nationality or issuer marks on the applicable card. Treat membership number and physical card serial as separate fields when both appear.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Membership or affiliation number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Card serial | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Program name | Document metadata | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Date of birth | Recorded | — | — | Verify presence by issuer or edition. |
+| Nationality | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Issuing authority | Document metadata | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-For supported RFID editions, the tag is a reference identifier used to retrieve the agency record. The retrieved biographic data is a separate channel. Verify the specific card generation and any printed machine-readable fields independently.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| RFID tag | Issuer assigned + encoded | RFID · CBP lookup | Reference identifier. Agency records can return biographic data separately. | Verify supported card generation. |
 
 ## Sources
 

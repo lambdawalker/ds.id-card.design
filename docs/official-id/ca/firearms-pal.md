@@ -9,11 +9,21 @@
 
 ## Human-readable fields
 
-Check name, portrait, licence number, expiration and authorized firearm classes or conditions on the PAL edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| License number | Issuer assigned | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| License class or category | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Restrictions | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Code presence and payload unverified.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified. |
 
 ## Sources
 

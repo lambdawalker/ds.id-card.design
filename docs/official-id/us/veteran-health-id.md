@@ -8,11 +8,21 @@
 
 ## Human-readable fields
 
-Check name, portrait, member or card identifiers and VA eligibility or priority indicators where shown. Verify expiration by edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Membership or affiliation number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Card number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Status or eligibility category | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Expiration date | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Verify barcode or stripe and which member identifier it carries from an edition-specific VA source. Do not equate a healthcare identifier with a Social Security number.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | barcode, stripe | Unverified. | Verify barcode or stripe and which member identifier it carries from an edition-specific VA source. Do not equate a healthcare identifier with a Social Security number. |
 
 ## Sources
 

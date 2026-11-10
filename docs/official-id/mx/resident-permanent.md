@@ -8,11 +8,34 @@
 
 ## Human-readable fields
 
-The circular lists name, nationality, country and date of birth, sex, portrait, immigration status, foreign-national identifier (NUE), expiration when applicable and CURP where required. The reverse includes signature, issuance place and date, migration document number, authority and renewal count where applicable. The circular excludes the renewal count for adult permanent residents.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Nationality | Issuer determined | — | — | — |
+| Country of birth | Recorded | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Portrait | Captured | — | — | — |
+| Status or eligibility category | Issuer determined | — | — | — |
+| Foreign national identifier (NUE) | Issuer assigned | — | — | — |
+| Expiration date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| CURP | Computed + issuer assigned | [RENAPO CURP composition](https://www.gob.mx/segob/renapo/es/articulos/sabes-como-se-conforma-tu-curp?idiom=es) | Derived from names, date of birth, sex and birthplace, with an issuer-assigned disambiguator and a check digit. The biographic inputs alone do not establish the official key. | Verify presence by issuer or edition. |
+| Holder signature | Captured | — | — | — |
+| Issuance place | Document metadata | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Document number | Issuer assigned | — | — | — |
+| Issuing authority | Document metadata | — | — | — |
+| Authority signature | Captured | — | — | — |
+| Renewal count | Issuer determined | — | — | The INM circular excludes this field for adult permanent residents. |
+
+The historical INM circular places the signature, issuance place and date, migration document number, authority details and any renewal count on the reverse.
 
 ## Machine-readable data
 
-The circular lists a reverse OCR zone. Field-level payload, format and any QR or chip on later editions require specimen verification.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Reverse OCR zone | Computed | OCR-readable text · INM circular | Field list unverified. | Historical specification. Verify QR or chip on later editions. |
 
 ## Sources
 

@@ -9,11 +9,21 @@
 
 ## Human-readable fields
 
-Check veteran name, photo, service number and proof-of-service wording. Verify whether rank, service dates or other details appear on the edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Service number | Issuer assigned | — | — | — |
+| Status or eligibility category | Issuer determined | — | — | — |
+| Rank | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Service dates | Recorded | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Code presence and payload unverified.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified. |
 
 ## Sources
 

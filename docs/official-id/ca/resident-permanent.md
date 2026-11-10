@@ -8,11 +8,24 @@
 
 ## Human-readable fields
 
-Check names, photograph, date of birth, sex marker, nationality, client identifier, card identifiers and expiry date. Compare permanent-residence date and other fields against the reverse specimen for the edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Nationality | Issuer determined | — | — | — |
+| Client identifier | Issuer assigned | — | — | — |
+| Card number | Issuer assigned | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Resident-since date | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Inspect the reverse for a machine-readable line and record its field categories only after confirming the specimen and format.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Inspect the reverse for a machine-readable line and record its field categories only after confirming the specimen and format. |
 
 ## Sources
 

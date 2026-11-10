@@ -8,11 +8,22 @@
 
 ## Human-readable fields
 
-Verify name, portrait, status label, work authorization, NUE, card number and validity directly on a remunerated-activity specimen. The INM notice confirms the type.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Status or eligibility category | Issuer determined | — | — | — |
+| Work authorization indicator | Issuer determined | — | — | — |
+| Foreign national identifier (NUE) | Issuer assigned | — | — | — |
+| Card number | Issuer assigned | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
 
 ## Machine-readable data
 
-Code presence and payload unverified.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified. |
 
 ## Sources
 

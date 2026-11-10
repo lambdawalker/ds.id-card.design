@@ -8,11 +8,30 @@
 
 ## Human-readable fields
 
-Passport type, issuing country, surname and given names, passport number, nationality, date of birth, sex marker, expiration date and portrait. Also check issue date, place of birth, authority, signature and any country-specific identifier on the applicable edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Document type | Document metadata | — | — | — |
+| Issuing country | Document metadata | — | — | — |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Passport number | Issuer assigned | — | — | — |
+| Nationality | Issuer determined | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Portrait | Captured | — | — | — |
+| Issue date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Place of birth | Recorded | — | — | Verify presence by issuer or edition. |
+| Issuing authority | Document metadata | — | — | Verify presence by issuer or edition. |
+| Holder signature | Captured | — | — | Verify presence by issuer or edition. |
+| National identifier | Issuer assigned | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-The passport MRZ carries document type, issuing state, names, document number, nationality, date of birth, sex marker, expiration date, optional issuer data and check digits. On electronic editions, the contactless chip stores MRZ data and a digital facial image under ICAO specifications. Confirm any additional data groups with the issuer.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Passport MRZ | Computed | ICAO Doc 9303 TD3 | Document type, issuing state, names, document number, nationality, date of birth, sex marker, expiration date, optional issuer data and check digits. | Check document edition. |
+| Contactless chip | Encoded | ICAO Doc 9303 logical data structure | MRZ data and digital facial image. | Electronic editions. Confirm any additional data groups. |
 
 ## Sources
 

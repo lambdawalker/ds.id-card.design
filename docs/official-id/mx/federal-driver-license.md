@@ -8,11 +8,22 @@
 
 ## Human-readable fields
 
-Check holder name, photo, federal license number, category, mode, validity and issuing authority on the app and print editions.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Driver license or permit number | Issuer assigned | — | — | Assignment policy varies by issuer. Randomness is unverified. |
+| License class or category | Issuer determined | — | — | — |
+| Mode of transport | Document metadata | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Issuing authority | Document metadata | — | — | — |
 
 ## Machine-readable data
 
-The federal rule describes a QR with encoded license data and an agency web link for verification. The individual embedded fields are unverified here.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Verification code | Computed | QR · SICT verification | Encoded license data and an agency verification link. Individual encoded fields are unverified. | Federal digital and print editions. |
 
 ## Sources
 

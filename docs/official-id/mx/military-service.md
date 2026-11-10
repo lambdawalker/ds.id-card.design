@@ -9,11 +9,24 @@
 
 ## Human-readable fields
 
-Check name, photo, military registration number, birth data, issuing recruitment authority, signature and issuance details. Capture release status and any separately issued release sheet independently.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Registration or enrollment number | Issuer assigned | — | — | — |
+| Date of birth | Recorded | — | — | Verify presence by issuer or edition. |
+| Place of birth | Recorded | — | — | Verify presence by issuer or edition. |
+| Issuing authority | Document metadata | — | — | — |
+| Holder signature | Captured | — | — | — |
+| Issue date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Status or eligibility category | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Check for an edition-specific code. Payload unverified.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Check for an edition-specific code. Payload unverified. |
 
 ## Sources
 

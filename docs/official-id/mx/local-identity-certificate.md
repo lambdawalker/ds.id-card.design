@@ -9,11 +9,25 @@
 
 ## Human-readable fields
 
-Check full name, issuing municipality, folio, issuance date, certification text, official signature or seal, and any portrait, date of birth or origin address appearing in the local form.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Issuing authority | Document metadata | — | — | — |
+| Folio | Issuer assigned | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Certification text | Document metadata | — | — | — |
+| Authority signature | Captured | — | — | Verify presence by issuer or edition. |
+| Official seal | Document metadata | — | — | Verify presence by issuer or edition. |
+| Portrait | Captured | — | — | Verify presence by issuer or edition. |
+| Date of birth | Recorded | — | — | Verify presence by issuer or edition. |
+| Address | Recorded | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Check municipal verification URLs or QR by product. Payload unverified.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | QR | Unverified. | Check municipal verification URLs or QR by product. Payload unverified. |
 
 ## Sources
 

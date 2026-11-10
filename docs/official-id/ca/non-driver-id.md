@@ -9,11 +9,24 @@
 
 ## Human-readable fields
 
-Check name, date of birth, portrait, address, identification number, issue and expiry, signature and any physical descriptors.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Portrait | Captured | — | — | — |
+| Address | Recorded | — | — | — |
+| Card number | Issuer assigned | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Holder signature | Captured | — | — | — |
+| Physical descriptors | Recorded | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-AAMVA describes PDF417 for adopting jurisdictions. Check actual card technology and field set by province or territory.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | PDF417 | Unverified. | AAMVA describes PDF417 for adopting jurisdictions. Check actual card technology and field set by province or territory. |
 
 ## Sources
 

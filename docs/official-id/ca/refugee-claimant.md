@@ -9,11 +9,23 @@
 
 ## Human-readable fields
 
-Check name, portrait, date of birth, client identifier, document number, issue and expiry dates and claim-status wording. Compare RPID and RPCD specimens separately.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Client identifier | Issuer assigned | — | — | — |
+| Document number | Issuer assigned | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Status or eligibility category | Issuer determined | — | — | — |
 
 ## Machine-readable data
 
-Code presence and payload unverified. Record any document verification service separately from fields visible or stored on the document.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified. Record any document verification service separately from fields visible or stored on the document. |
 
 ## Sources
 

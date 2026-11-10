@@ -9,11 +9,27 @@
 
 ## Human-readable fields
 
-Check surname and given names, photo, date of birth, sex, signature, address or masked address, clave de elector, CURP, electoral section and validity. Record CIC and OCR identifiers separately where shown.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Holder signature | Captured | — | — | — |
+| Address | Recorded | — | — | May be masked. |
+| Clave de elector | Issuer assigned | — | — | — |
+| CURP | Computed + issuer assigned | [RENAPO CURP composition](https://www.gob.mx/segob/renapo/es/articulos/sabes-como-se-conforma-tu-curp?idiom=es) | Derived from names, date of birth, sex and birthplace, with an issuer-assigned disambiguator and a check digit. The biographic inputs alone do not establish the official key. | — |
+| Electoral section | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| CIC identifier | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Printed OCR identifier | Issuer assigned | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-INE documents rear verification QR codes on G/H and continued QR use on newer models. Its verifier shows names, sex, CURP, OCR and production date in the cited example. Treat this as verified app output, with raw field membership, model-specific changes and any issuer lookup tracked separately.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Rear verification codes | Computed | QR · INE verification | Embedded field list unverified. INE's verifier example displays names, sex, CURP, OCR identifier and production date. | Documented on G/H and newer models. App output alone does not establish where each value is stored. |
 
 ## Sources
 

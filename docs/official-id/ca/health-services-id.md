@@ -9,11 +9,23 @@
 
 ## Human-readable fields
 
-Check name, member or health number, issuer, photo, date of birth, issue or expiry date and coverage class where visible. Separate any driver license fields on combined cards.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Health or beneficiary number | Issuer assigned | — | — | — |
+| Issuing authority | Document metadata | — | — | — |
+| Portrait | Captured | — | — | Verify presence by issuer or edition. |
+| Date of birth | Recorded | — | — | Verify presence by issuer or edition. |
+| Issue date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Expiration date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Coverage class | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Confirm technology and payload by program. A member identifier and a backend eligibility result are separate observations.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Confirm technology and payload by program. A member identifier and a backend eligibility result are separate observations. |
 
 ## Sources
 

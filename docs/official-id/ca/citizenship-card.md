@@ -9,11 +9,22 @@
 
 ## Human-readable fields
 
-Check name, portrait, birth date, sex marker, signature and citizenship certificate number or issue details on both sides of the legacy card.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Holder signature | Captured | — | — | — |
+| Certificate number | Issuer assigned | — | — | — |
+| Issue date | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Code presence and payload unverified for the legacy edition. Research modern paper and electronic certificates separately.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified for the legacy edition. Research modern paper and electronic certificates separately. |
 
 ## Sources
 

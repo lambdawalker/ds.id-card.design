@@ -9,11 +9,26 @@
 
 ## Human-readable fields
 
-Check name, portrait, date of birth, card or licence number, issuing province, expiration, and printed citizenship indicator or border-travel legend. Check driving privileges on the licence variant.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Document number | Issuer assigned | — | — | — |
+| Issuing province | Document metadata | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Citizenship indicator | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Border-travel legend | Document metadata | — | — | Verify presence by issuer or edition. |
+| License class or category | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Endorsements | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Restrictions | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Some border credentials use RFID as a lookup identifier. Verify RFID and any printed MRZ or barcode for the particular enhanced product. The cited source describes the CBP lookup architecture.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | RFID, MRZ, barcode | Unverified. | Some border credentials use RFID as a lookup identifier. Verify RFID and any printed MRZ or barcode for the particular enhanced product. The cited source describes the CBP lookup architecture. |
 
 ## Sources
 

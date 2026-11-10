@@ -8,11 +8,22 @@
 
 ## Human-readable fields
 
-Check driver name, licence or service identifier, military vehicle qualifications, restrictions and validity fields.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| License number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Service number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Qualifications | Issuer determined | — | — | — |
+| Restrictions | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Issue date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Expiration date | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Code presence and payload unverified for DND 404.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified for DND 404. |
 
 ## Sources
 

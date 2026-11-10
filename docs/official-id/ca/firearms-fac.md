@@ -9,11 +9,22 @@
 
 ## Human-readable fields
 
-Check holder name, certificate number, issuing authority and validity dates on the historical FAC. Confirm photo and conditions by edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Certificate number | Issuer assigned | — | — | — |
+| Issuing authority | Document metadata | — | — | — |
+| Issue date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Expiration date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Portrait | Captured | — | — | Verify presence by issuer or edition. |
+| Restrictions | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Code presence and payload unverified.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified. |
 
 ## Sources
 

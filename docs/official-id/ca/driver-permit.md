@@ -9,11 +9,29 @@
 
 ## Human-readable fields
 
-Check name, portrait, date of birth, address, credential number, issue date, expiry, sex marker and signature. Driver credentials may also show class, endorsements and restrictions. Other physical descriptors vary by jurisdiction.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Address | Recorded | — | — | — |
+| Driver license or permit number | Issuer assigned | — | — | Assignment policy varies by issuer. Randomness is unverified. |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Holder signature | Captured | — | — | — |
+| License class or category | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Endorsements | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Restrictions | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Physical descriptors | Recorded | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Check provincial implementation of AAMVA PDF417 and older magnetic stripes. ICBC specifically documents the driver licence number in both barcode and magnetic stripe on the editions it describes. Other payload fields and learner formats require edition verification.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Barcode | Computed | PDF417 where adopted · AAMVA | BC's ICBC confirms the license number in the barcode it documents. Other fields are unverified. | Verify symbology and payload by province and edition. |
+| Magnetic stripe | Encoded | ICBC legacy card channel | Driver license number confirmed on the editions ICBC documents. | Check medium and edition, especially learner permits. |
 
 ## Sources
 

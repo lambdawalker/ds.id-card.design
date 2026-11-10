@@ -8,11 +8,22 @@
 
 ## Human-readable fields
 
-Check name, portrait, reference and credential numbers, issue and expiration dates, and national or international endorsements where printed. Track booklet and newer credential formats by edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Reference number | Issuer assigned | — | — | — |
+| Document number | Issuer assigned | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Endorsements | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Inspect both sides or pages for a barcode or other machine-readable region by Coast Guard edition. Payload unverified.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | barcode | Unverified. | Inspect both sides or pages for a barcode or other machine-readable region by Coast Guard edition. Payload unverified. |
 
 ## Sources
 

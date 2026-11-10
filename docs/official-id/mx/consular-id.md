@@ -8,11 +8,26 @@
 
 ## Human-readable fields
 
-Check name, portrait, date of birth, consular registration or card number, issuing post, issue and expiry dates, address and signature by edition. The third-generation specimen allows an X sex marker or a hidden marker.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Registration or enrollment number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Card number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Issuing authority | Document metadata | — | — | — |
+| Issue date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Address | Recorded | — | — | Verify presence by issuer or edition. |
+| Holder signature | Captured | — | — | Verify presence by issuer or edition. |
+| Sex marker | Recorded | — | — | Third-generation editions can show X or omit the marker. |
 
 ## Machine-readable data
 
-SRE describes a chip containing credential information for the third generation. Individual chip data groups and payload fields are unverified here.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Embedded chip | Encoded | SRE third-generation chip | Credential information. Individual fields and data groups are unverified. | Third-generation consular card. |
 
 ## Sources
 

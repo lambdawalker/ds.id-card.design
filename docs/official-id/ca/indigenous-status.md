@@ -8,11 +8,22 @@
 
 ## Human-readable fields
 
-Check registered name, registration number, portrait, issuing office or band details, signature and validity fields.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Registration or enrollment number | Issuer assigned | — | — | — |
+| Portrait | Captured | — | — | — |
+| Issuing authority | Document metadata | — | — | Verify presence by issuer or edition. |
+| Tribe or First Nation | Document metadata | — | — | Verify presence by issuer or edition. |
+| Holder signature | Captured | — | — | Verify presence by issuer or edition. |
+| Expiration date | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Verify code presence per edition. ISC's secure-card MRZ statement pertains to the separate SCIS credential.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | MRZ | Unverified. | Verify code presence per edition. ISC's secure-card MRZ statement pertains to the separate SCIS credential. |
 
 ## Sources
 

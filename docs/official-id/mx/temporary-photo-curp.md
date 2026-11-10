@@ -9,11 +9,20 @@
 
 ## Human-readable fields
 
-INM confirms a temporary CURP with photo. Check name, CURP, portrait, validity and issuing authority on a specimen of this migration-specific product.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| CURP | Computed + issuer assigned | [RENAPO CURP composition](https://www.gob.mx/segob/renapo/es/articulos/sabes-como-se-conforma-tu-curp?idiom=es) | Derived from names, date of birth, sex and birthplace, with an issuer-assigned disambiguator and a check digit. The biographic inputs alone do not establish the official key. | — |
+| Portrait | Captured | — | — | — |
+| Expiration date | Issuer determined | — | — | Verify presence by issuer or edition. |
+| Issuing authority | Document metadata | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Code presence and payload unverified. Verify separately from the ordinary CURP printout.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | — | Unverified. | Code presence and payload unverified. Verify separately from the ordinary CURP printout. |
 
 ## Sources
 

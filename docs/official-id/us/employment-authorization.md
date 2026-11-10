@@ -8,11 +8,26 @@
 
 ## Human-readable fields
 
-Check name, portrait, USCIS number, card number, eligibility category, date of birth, sex marker, country of birth, valid-from and expiration dates. Record any travel or employment notation separately.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| USCIS number | Issuer assigned | — | — | — |
+| Card number | Issuer assigned | — | — | — |
+| Status or eligibility category | Issuer determined | — | — | — |
+| Date of birth | Recorded | — | — | — |
+| Sex marker | Recorded | — | — | — |
+| Country of birth | Recorded | — | — | — |
+| Valid-from date | Issuer determined | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Travel or employment notation | Issuer determined | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Inspect the reverse of the specific edition for machine-readable text or barcode. Payload unverified here.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | barcode | Unverified. | Inspect the reverse of the specific edition for machine-readable text or barcode. Payload unverified here. |
 
 ## Sources
 

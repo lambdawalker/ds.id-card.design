@@ -9,11 +9,24 @@
 
 ## Human-readable fields
 
-Check name, portrait, affiliation or eligibility category, service, expiration and identifiers on both sides. Verify sponsor and relationship fields only where shown.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Given name(s) | Given | — | — | — |
+| Surname(s) | Inherited / legal | — | — | — |
+| Portrait | Captured | — | — | — |
+| Affiliation | Issuer determined | — | — | — |
+| Status or eligibility category | Issuer determined | — | — | — |
+| Organization, service or agency | Document metadata | — | — | — |
+| Expiration date | Issuer determined | — | — | — |
+| Document number | Issuer assigned | — | — | Verify presence by issuer or edition. |
+| Sponsor information | Recorded | — | — | Verify presence by issuer or edition. |
+| Relationship to sponsor | Recorded | — | — | Verify presence by issuer or edition. |
 
 ## Machine-readable data
 
-Technology varies between USID generations. Verify barcode or printed machine-readable region and its data against the exact edition.
+| Field | Data origin | Algorithm or format | Contents or inputs | Coverage notes |
+| --- | --- | --- | --- | --- |
+| Machine-readable feature | Unverified | barcode | Unverified. | Technology varies between USID generations. Verify barcode or printed machine-readable region and its data against the exact edition. |
 
 ## Sources
 
