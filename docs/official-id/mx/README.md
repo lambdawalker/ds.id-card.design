@@ -37,3 +37,10 @@ Birth registration and certified birth certificate, naturalization letter or cer
 ## Issuer coverage
 
 **Mexico · 32 federal entities.** Aguascalientes, Baja California, Baja California Sur, Campeche, Chiapas, Chihuahua, Ciudad de México, Coahuila, Colima, Durango, Estado de México, Guanajuato, Guerrero, Hidalgo, Jalisco, Michoacán, Morelos, Nayarit, Nuevo León, Oaxaca, Puebla, Querétaro, Quintana Roo, San Luis Potosí, Sinaloa, Sonora, Tabasco, Tamaulipas, Tlaxcala, Veracruz, Yucatán and Zacatecas. Check local digital editions, license classes, provisional permits, and municipal identity letters. [mx-criteria](https://www.dof.gob.mx/2026/INE/Acuerdo_INE_CNV02_ENE-2026.pdf)
+
+## Complementary identity dataset planning
+
+See the [photo dataset field-coverage report](complementary-dataset.md) and
+[machine-readable field inventory](complementary-fields.yaml) for fields that are
+ready, derivable in code, transformable with AI, or missing from `lambdaWalker/ds.photo-id`.
+The inventory separates current input availability from future generation methods.

@@ -1,0 +1,565 @@
+schema_version: 1
+purpose: Field inventory for a synthetic Mexican-ID complement to lambdaWalker/ds.photo-id;
+  no generated identities or issuer registrations.
+review_date: '2026-11-11'
+photo_dataset: lambdaWalker/ds.photo-id
+photo_schema: 'v2: id,image,image_transparent,prompt,parameters,metadata,draft_prompt'
+availability_definition: Classification is relative to current photo-row inputs, before
+  inventing new personal facts. Conditional absent/legacy values become missing for
+  that row.
+categories:
+  ready: Present and reusable as the source value; this does not certify that the
+    image matches the prompt.
+  transform_code: Existing source input can be transformed deterministically, with
+    an explicit dictionary/format/profile rule.
+  transform_ai: Existing appearance inputs can be rewritten/summarized by an LLM,
+    without inventing biographical facts.
+  missing: Insufficient source information; requires a new person fact, registry fixture,
+    template asset, profile choice or external material. Later code generation does
+    not make it raw today.
+fields:
+- field: source.photo_id
+  label: Photo dataset row ID
+  availability: ready
+  source_or_completion: id
+  notes: Use the complete session UUID/portrait-stem ID, not metadata.id alone.
+- field: assets.portrait_original
+  label: Original portrait
+  availability: ready
+  source_or_completion: image
+  notes: Asset is available; acceptance by a particular ID photo specification is
+    not established.
+- field: assets.portrait_transparent
+  label: Transparent portrait
+  availability: ready
+  source_or_completion: image_transparent
+  notes: Asset is available; compose onto the document-specific photo background where
+    needed.
+- field: person.age_at_portrait
+  label: Selected portrait age
+  availability: ready
+  source_or_completion: parameters.age
+  notes: Age is a synthetic prompt input. It has no defined civil reference date;
+    age 100 represents the sampler’s 100+ bucket.
+- field: appearance.gender_presentation
+  label: Selected gender presentation
+  availability: ready
+  source_or_completion: parameters.gender
+  notes: Not an authoritative sex marker or a legal gender-identity declaration.
+- field: appearance.race_ethnicity
+  label: Selected race/ethnicity/ancestry label
+  availability: ready
+  source_or_completion: parameters.race_ethnicity
+  notes: Not nationality, citizenship, or Indigenous/Afromexican self-identification.
+- field: appearance.eye_color
+  label: Selected eye color
+  availability: ready
+  source_or_completion: parameters.eyes.color
+  notes: 'Conditional: omitted for some opaque-eye profiles and unknown in legacy
+    rows.'
+- field: appearance.hair_color
+  label: Selected hair color
+  availability: ready
+  source_or_completion: parameters.hair.color
+  notes: 'Conditional: unused hair color is omitted for bald subjects.'
+- field: appearance.skin_tone
+  label: Selected skin tone
+  availability: ready
+  source_or_completion: parameters.skin.tone
+  notes: An intended appearance description, not a verified observation.
+- field: appearance.face_shape
+  label: Selected face outline
+  availability: ready
+  source_or_completion: parameters.face.shape
+  notes: May require a document-specific vocabulary before printing.
+- field: appearance.build
+  label: Selected visible build
+  availability: ready
+  source_or_completion: parameters.build
+  notes: Describes face/neck/shoulder appearance, not measured weight or stature.
+- field: appearance.distinguishing_marks
+  label: Selected birthmark and other appearance descriptions
+  availability: ready
+  source_or_completion: parameters.skin.birthmark; parameters.face.detail; parameters.metadata.body_detail
+  notes: Only stored selections are available. Absence of a field does not certify
+    absence of marks.
+- field: person.person_id
+  label: Stable complementary person ID
+  availability: transform_code
+  source_or_completion: UUID/hash from source.photo_id and a dataset namespace
+  notes: A new key can be deterministically generated without inventing biographical
+    facts.
+- field: assets.portrait_for_template
+  label: Document-size portrait asset
+  availability: transform_code
+  source_or_completion: Decode, resize, crop and composite image/image_transparent
+    with profile.photo_spec
+  notes: A crop cannot remove headwear or guarantee compliance; reject or regenerate
+    incompatible portraits.
+- field: assets.portrait_secondary
+  label: Secondary or grayscale portrait
+  availability: transform_code
+  source_or_completion: Resize, grayscale, opacity/compositing from the same portrait
+  notes: Use only where the selected document edition has a secondary portrait; no
+    authentication claim.
+- field: appearance.eye_color_code
+  label: Document vocabulary for eye color
+  availability: transform_code
+  source_or_completion: Dictionary mapping from appearance.eye_color
+  notes: Missing if eye color is absent; use the issuer/edition vocabulary.
+- field: appearance.hair_color_code
+  label: Document vocabulary for hair color
+  availability: transform_code
+  source_or_completion: Dictionary mapping from appearance.hair_color and gray descriptors
+  notes: Do not supply an invented color for a hairless/unknown row.
+- field: appearance.skin_tone_code
+  label: Tez / complexion vocabulary
+  availability: transform_code
+  source_or_completion: Dictionary mapping from appearance.skin_tone
+  notes: Explicit mapping policy; not a race inference.
+- field: appearance.face_shape_code
+  label: Face-outline vocabulary
+  availability: transform_code
+  source_or_completion: Dictionary mapping from appearance.face_shape
+  notes: Code can localize or coarsen the selected outline.
+- field: appearance.build_code
+  label: Complexión vocabulary
+  availability: transform_code
+  source_or_completion: Dictionary mapping from appearance.build.category
+  notes: A declared synthetic description, not a BMI/weight calculation.
+- field: appearance.wears_glasses_in_portrait
+  label: Visible eyewear selection flag
+  availability: transform_code
+  source_or_completion: Boolean from parameters.metadata.glasses / eyewear_instruction
+  notes: Only describes the sampled photo; not a requirement to wear corrective lenses
+    while driving.
+- field: person.age_band
+  label: Portrait-age band
+  availability: transform_code
+  source_or_completion: Bucket parameters.age
+  notes: Reference is portrait age, not age on a future issuance date.
+- field: eligibility.age_thresholds_at_portrait
+  label: Age-only eligibility flags
+  availability: transform_code
+  source_or_completion: Compare parameters.age to profile thresholds
+  notes: For example 60+ for INAPAM. This is not a full legal-eligibility determination.
+- field: appearance.distinguishing_marks_es
+  label: Natural-language señas particulares
+  availability: transform_ai
+  source_or_completion: Rewrite stored birthmark location/size, facial detail and
+    visible body-detail selections into Spanish
+  notes: Do not add marks or diagnose conditions. A controlled dictionary/template
+    may replace the LLM later.
+- field: appearance.facial_description_es
+  label: Natural-language facial description
+  availability: transform_ai
+  source_or_completion: Summarize stored face, nose, ears, eyes and skin descriptors
+  notes: Describe selected features rather than inventing biography or medical evidence.
+- field: appearance.hair_description_es
+  label: Natural-language hair and facial-hair description
+  availability: transform_ai
+  source_or_completion: Rewrite stored hair style, baldness, graying and facial-hair
+    selections
+  notes: Restrict the output to supplied values; use unknown when the record lacks
+    them.
+- field: person.given_names
+  label: Given names
+  availability: missing
+  source_or_completion: New fictional-name source/sampler; optionally an LLM backed
+    by a name catalog
+  notes: Appearance, gender presentation and age do not contain a person’s name.
+- field: person.first_surname
+  label: First surname
+  availability: missing
+  source_or_completion: New fictional-name source/sampler
+  notes: Preserve compound surnames and cultural naming variants.
+- field: person.second_surname
+  label: Second surname
+  availability: missing
+  source_or_completion: New fictional-name source/sampler; nullable
+  notes: Do not require two surnames for every identity, especially foreign-document
+    holders.
+- field: person.birth_date
+  label: Exact date of birth
+  availability: missing
+  source_or_completion: Sample a calendar date consistent with age_at_portrait and
+    an explicitly chosen identity reference date
+  notes: Age is partial evidence, not an exact date. Save birth date once and reuse
+    it across documents.
+- field: person.birth_country
+  label: Country of birth
+  availability: missing
+  source_or_completion: New geographic/person-history input
+  notes: Cannot infer from race/ethnicity or from the fact that a document is Mexican-issued.
+- field: person.birth_state
+  label: Birth state/entity or foreign-place representation
+  availability: missing
+  source_or_completion: New geographic/person-history input
+  notes: Needed for civil text and some identifier rules; distinct from residence
+    and issuing state.
+- field: person.birth_municipality
+  label: Birth municipality/locality
+  availability: missing
+  source_or_completion: New geographic/person-history input
+  notes: Link to the chosen birth state/country.
+- field: person.nationalities
+  label: Nationality/citizenship
+  availability: missing
+  source_or_completion: New person-history input with document eligibility constraints
+  notes: Mexican passports and Mexican-issued foreign-resident cards require different
+    holder profiles.
+- field: person.document_sex_marker
+  label: Document sex marker
+  availability: missing
+  source_or_completion: Explicit fictional identity choice and document-edition mapping
+  notes: Do not automatically map woman/man presentation to an authoritative sex field.
+- field: person.gender_identity_declaration
+  label: Gender-identity declaration, where supported
+  availability: missing
+  source_or_completion: Explicit synthetic self-declaration and edition policy
+  notes: Separate from presentation and the document sex marker.
+- field: person.community_self_identification
+  label: Indigenous/Afromexican self-identification, where supported
+  availability: missing
+  source_or_completion: Explicit synthetic self-declaration
+  notes: Not recoverable from the sampled ancestry label or skin tone.
+- field: person.marital_status
+  label: Marital status, where applicable
+  availability: missing
+  source_or_completion: New person-history input
+  notes: Not present in a headshot.
+- field: person.occupation
+  label: Occupation or activity
+  availability: missing
+  source_or_completion: New person-history input
+  notes: A garment such as a chef jacket or scrubs is not occupational evidence.
+- field: address.country
+  label: Residential country
+  availability: missing
+  source_or_completion: New address source/sampler
+  notes: Consular credentials may use an address outside Mexico.
+- field: address.state
+  label: Residential state/entity
+  availability: missing
+  source_or_completion: New geographically consistent address input
+  notes: Distinct from birth and issuance locations.
+- field: address.municipality
+  label: Municipality/alcaldía
+  availability: missing
+  source_or_completion: New geographically consistent address input
+  notes: Use an address catalog, not appearance inference.
+- field: address.locality
+  label: Locality/city
+  availability: missing
+  source_or_completion: New geographically consistent address input
+  notes: Retain foreign-address support.
+- field: address.neighborhood
+  label: Colonia/neighborhood
+  availability: missing
+  source_or_completion: New geographically consistent address input
+  notes: Nullable according to local/foreign address structure.
+- field: address.postal_code
+  label: Postal code
+  availability: missing
+  source_or_completion: New address catalog input
+  notes: Validate compatibility with state, municipality and neighborhood.
+- field: address.street
+  label: Street name/type
+  availability: missing
+  source_or_completion: New address source/sampler
+  notes: Prefer structured address components.
+- field: address.exterior_number
+  label: Exterior/building number
+  availability: missing
+  source_or_completion: New address sampler
+  notes: Allow jurisdiction-specific values such as S/N.
+- field: address.interior_number
+  label: Interior/unit number
+  availability: missing
+  source_or_completion: New address sampler; nullable
+  notes: Preserve absent versus unknown.
+- field: person.contact
+  label: Telephone/email, if required
+  availability: missing
+  source_or_completion: New fictional-contact input
+  notes: Not a universal printed-ID requirement.
+- field: person.emergency_contact
+  label: Emergency contact name, relationship, phone and optional address
+  availability: missing
+  source_or_completion: New related-person/contact input
+  notes: Not inferable from the portrait; coordinate related records.
+- field: person.guardians
+  label: Parent/guardian identity and relationship, if required
+  availability: missing
+  source_or_completion: New related-person/civil-history input
+  notes: Needed for some minor/supporting-document profiles; current portraits are
+    adults only.
+- field: person.height_cm
+  label: Measured/synthetic stature
+  availability: missing
+  source_or_completion: New explicitly synthetic numerical sample
+  notes: A headshot has no reliable full-body scale.
+- field: person.weight_kg
+  label: Measured/synthetic weight
+  availability: missing
+  source_or_completion: New explicitly synthetic numerical sample
+  notes: Visible build does not determine kilograms or BMI.
+- field: person.blood_group_rh
+  label: Blood group and Rh, where required
+  availability: missing
+  source_or_completion: New independent synthetic health input
+  notes: Not inferable from appearance, ancestry, or condition prompts.
+- field: person.allergies
+  label: Allergy information, where required
+  availability: missing
+  source_or_completion: New independent synthetic health input
+  notes: Not contained in the image.
+- field: person.organ_donation_consent
+  label: Organ-donation declaration, where required
+  availability: missing
+  source_or_completion: Explicit fictional consent value
+  notes: Not an appearance-derived property.
+- field: person.driving_restrictions
+  label: Recorded driving restrictions/medical assessment
+  availability: missing
+  source_or_completion: New synthetic assessed-status input and issuer rules
+  notes: Do not infer a driving restriction or permission from glasses, blindness
+    or syndrome prompts.
+- field: assets.holder_signature
+  label: Handwritten holder-signature image
+  availability: missing
+  source_or_completion: New synthetic signature generator/asset source, after selecting
+    a name
+  notes: A name can condition a new signature but cannot recover a missing signature
+    from the portrait.
+- field: assets.fingerprints
+  label: Fingerprint image/template, where required
+  availability: missing
+  source_or_completion: Independent synthetic biometric assets
+  notes: Not derivable from facial photographs.
+- field: assets.iris
+  label: Iris capture/template, only where the selected profile requires it
+  availability: missing
+  source_or_completion: Independent synthetic biometric assets
+  notes: A 512-pixel headshot or eye-color string is not a proper iris acquisition;
+    do not assume universal requirement.
+- field: civil.birth_registration
+  label: Acta, book, folio, registry office, year and registration locality
+  availability: missing
+  source_or_completion: New civil-record fixtures
+  notes: Needed for supporting civil documents and source-document provenance, not
+    every card.
+- field: civil.nationality_document
+  label: Naturalization/nationality certificate reference, if applicable
+  availability: missing
+  source_or_completion: New civil-history fixtures
+  notes: Conditional on the person/document profile.
+- field: identifiers.curp
+  label: CURP
+  availability: missing
+  source_or_completion: Compute synthetic structure after selecting names, birth date,
+    recorded sex and birthplace; supply synthetic allocation component and check digit
+  notes: Missing now. Predictable structure does not establish an officially assigned
+    RENAPO identity.
+- field: identifiers.rfc
+  label: RFC, if required by a selected profile/supporting fiscal document
+  availability: missing
+  source_or_completion: Generate a synthetic identifier after names/DOB and an allocation
+    policy are available
+  notes: Missing now; do not equate a generated homoclave with a SAT registration.
+- field: identifiers.nss
+  label: NSS/health identifier
+  availability: missing
+  source_or_completion: New synthetic affiliation/registry input; optional format/check-digit
+    logic
+  notes: Not recoverable from age or from a portrait.
+- field: document.profile
+  label: Document family, issuer, jurisdiction, edition and valid-from version
+  availability: missing
+  source_or_completion: Template/profile catalog
+  notes: Missing from photo data but normally provided by rendering configuration,
+    not invented per portrait.
+- field: document.number
+  label: Passport/license/card/document number
+  availability: missing
+  source_or_completion: New synthetic issuer-specific numbering policy
+  notes: Treat as issuer-assigned; do not claim it is random or computable from identity
+    without evidence.
+- field: document.issue_date
+  label: Issue date
+  availability: missing
+  source_or_completion: New document-event input
+  notes: Photo image_requested_at is not an official issue date.
+- field: document.expiration
+  label: Expiry date and validity kind
+  availability: missing
+  source_or_completion: New document-event input plus profile validity rules
+  notes: Support fixed expiry, indefinite validity, no-expiry and unknown as distinct
+    cases.
+- field: document.issue_place
+  label: Place of issue
+  availability: missing
+  source_or_completion: Issuer/profile and new issuance-event input
+  notes: Distinct from residence and birth location.
+- field: document.registration_or_enrollment
+  label: Registration/enrollment number and date/year
+  availability: missing
+  source_or_completion: New synthetic issuer registry input
+  notes: Applies to consular, military and other program-specific cards.
+- field: document.renewal_history
+  label: Renewal/replacement count and previous-document references
+  availability: missing
+  source_or_completion: New coherent document-event history
+  notes: Do not independently randomize history-dependent fields.
+- field: document.observations
+  label: Restrictions, status legends and endorsements
+  availability: missing
+  source_or_completion: Profile vocabulary plus new document-status inputs
+  notes: Not every legend applies to every document family.
+- field: voter.clave_de_elector
+  label: Clave de elector
+  availability: missing
+  source_or_completion: New identity inputs plus version-specific issuer/allocation
+    rules
+  notes: Not present in photo data; some structure may become computable later.
+- field: voter.cic
+  label: CIC identifier
+  availability: missing
+  source_or_completion: New synthetic INE control identifier
+  notes: Not the same as OCR or clave de elector.
+- field: voter.ocr_identifier
+  label: Printed OCR/control identifier
+  availability: missing
+  source_or_completion: New synthetic INE control identifier and edition rules
+  notes: OCR is a field name here; recognizing letters in an image does not create
+    this ID.
+- field: voter.electoral_geography
+  label: Electoral section, entity, municipality, locality and district where applicable
+  availability: missing
+  source_or_completion: New electoral-geography catalog/join and selected residence
+  notes: Cannot derive an electoral section from a postal code alone without an appropriate
+    geographic source.
+- field: voter.registration_and_emission
+  label: Registration year, emission/replacement details
+  availability: missing
+  source_or_completion: New coherent voter-record history
+  notes: Keep age, registration and issue chronology compatible.
+- field: driver.category
+  label: License/permit classes and categories
+  availability: missing
+  source_or_completion: New selected authorization plus state/federal profile vocabulary
+  notes: Not derivable from appearance; categories differ by issuer.
+- field: driver.vehicle_service_mode
+  label: Authorized vehicle, service modality and transport mode
+  availability: missing
+  source_or_completion: New selected authorization plus issuer rules
+  notes: Needed for relevant federal/special driving profiles.
+- field: military.record
+  label: Military matrícula, class, service/status and applicable rank/unit
+  availability: missing
+  source_or_completion: New military-record fixtures
+  notes: Appearance and age alone do not establish military status.
+- field: professional.record
+  label: Professional license number, degree, institution and award/registration dates
+  availability: missing
+  source_or_completion: New educational/professional history and synthetic registry
+    identifiers
+  notes: Distinguish historical photo credentials from electronic professional records.
+- field: migration.nue
+  label: Número Único de Extranjero
+  availability: missing
+  source_or_completion: New synthetic foreign-national registry identifier
+  notes: Distinct from CURP and the individual card/document number.
+- field: migration.status
+  label: Residence/visitor category, work authorization and status legends
+  availability: missing
+  source_or_completion: New immigration-history input plus selected document profile
+  notes: Do not infer nationality or immigration status from ancestry.
+- field: migration.family_or_authorization
+  label: Dependent-family flag or special work/adoption/humanitarian authorization
+  availability: missing
+  source_or_completion: New related-record/status input
+  notes: Conditional on the specific INM document family.
+- field: employee.record
+  label: Employee ID, badge ID, agency, role/rank and access level
+  availability: missing
+  source_or_completion: New employment/service history and issuer profile
+  notes: A uniform-like shirt in the portrait is not proof of employment.
+- field: student.record
+  label: Student number, institution, program/grade and school cycle
+  availability: missing
+  source_or_completion: New education-history fixtures
+  notes: Age constrains plausible history but does not determine it.
+- field: health.affiliation
+  label: Beneficiary number, coverage class and institution/unit
+  availability: missing
+  source_or_completion: New affiliation-history fixtures
+  notes: No clinical status should be inferred from the portrait.
+- field: senior.affiliation
+  label: INAPAM/other program affiliation number
+  availability: missing
+  source_or_completion: New synthetic program registry input
+  notes: Age 60+ can be tested separately, but age does not supply membership.
+- field: issuer.static_fields
+  label: Issuer name, country codes, headings, logos and fixed legends
+  availability: missing
+  source_or_completion: Template/profile catalog
+  notes: Mexico is an issuing country here, not an inferred holder nationality.
+- field: issuer.signatory_assets
+  label: Authority name/title, signature and seal/stamp assets
+  availability: missing
+  source_or_completion: Versioned template assets and synthetic signatory fixtures
+  notes: Not contained in the portrait; distinguish holder signature from issuer signature.
+- field: machine.mrz
+  label: MRZ text and check digits
+  availability: missing
+  source_or_completion: Deterministic generation after identity, document number,
+    nationality/sex and validity inputs exist
+  notes: Missing currently, despite a computable final format. Use the correct passport/card
+    edition rules.
+- field: machine.qr
+  label: QR payload and QR image
+  availability: missing
+  source_or_completion: Define a test payload from completed identity/document fields,
+    then encode in code
+  notes: Missing payload today; an arbitrary QR is not an authentic issuer-verifiable
+    credential.
+- field: machine.barcode
+  label: Barcode payload and barcode image
+  availability: missing
+  source_or_completion: Document-edition schema plus completed fields, then code encoding
+  notes: Do not assume every Mexican ID uses PDF417, the same barcode, or the same
+    field set.
+- field: machine.chip
+  label: Contactless-chip data groups and document security objects
+  availability: missing
+  source_or_completion: Profile-specific data encoding after full identity/document
+    inputs; separate test fixtures
+  notes: A face image alone is not a complete electronic passport/consular chip.
+- field: machine.issuer_authentication
+  label: Issuer digital signatures, certificates and verification service state
+  availability: missing
+  source_or_completion: External issuer material; use explicitly separate test keys/verification
+    fixtures for synthetic testing
+  notes: Authenticity is not created by copying a QR layout, computing a check digit
+    or using an LLM.
+- field: disability.record
+  label: Disability-credential registration and any printed certified category/status
+  availability: missing
+  source_or_completion: New synthetic certification/registration fixtures and a DIF/local
+    document profile
+  notes: An intended facial-condition or blindness prompt is not a disability certification
+    or a certified degree of disability.
+- field: pension.record
+  label: Pensioner/retiree identifier, institution and benefit-status fields
+  availability: missing
+  source_or_completion: New synthetic pension/retirement history and institution profile
+  notes: Age and appearance do not establish pension entitlement; validity may be
+    permanent for a selected edition.
+- field: maritime.record
+  label: Maritime identity/seafarer registration and credential category
+  availability: missing
+  source_or_completion: New synthetic seafarer registration/qualification history
+    and SEMAR credential profile
+  notes: Confirm the individual edition’s printed fields, physical descriptors and
+    validity rules; not derivable from portrait clothing.
